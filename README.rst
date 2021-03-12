@@ -13,6 +13,7 @@ create virtualenv, install requirements with pip,
 they are listed in requirements.txt, and run:
 
 .. code:: bash
+
     (venv)% python app.py
 
 open browser, search *localhost:5000*, you'll see the todo list,
