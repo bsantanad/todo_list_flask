@@ -25,5 +25,5 @@ from some place right?
 
 todo web app:
 `Python Flask Beginner Tutorial - Todo App - Crash Course 
-<https://www.youtube.com/watch?v=yKHJsLUENl0>`
+<https://www.youtube.com/watch?v=yKHJsLUENl0>`_
 
