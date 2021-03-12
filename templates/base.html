@@ -16,6 +16,21 @@
             <button type=submit>add</button>
         </div>
     </form>
-   
+    
+    <!-- jinja template in action -->
+    {% for todo in todo_list%}
+        <p> {{todo.id}}, {{todo.title}} </p>
+
+        {% if  not todo.complete %}
+            <span>not completed</span>
+        {% else %}
+            <span>completed</span>
+        {% endif %}
+        
+        <a href="/"> Update </a>
+        <a href="/"> Delete </a>
+
+    {% endfor%}
+
 </body>
 </html>

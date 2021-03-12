@@ -19,7 +19,8 @@ def index():
     # show todos
     todo_list = Todo.query.all() # returns list with all db
     print(todo_list)
-    return flask.render_template('base.html')
+    # more info on the second parameter, jinja template engine
+    return flask.render_template('base.html', todo_list=todo_list)
 
 if __name__=="__main__":
     db.create_all()
