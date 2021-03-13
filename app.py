@@ -31,6 +31,22 @@ def add():
     db.session.commit()
     return flask.redirect(flask.url_for("index"))
 
+@app.route('/update/<int:todo_id>')
+def update(todo_id):
+    # update state of item 
+    todo = Todo.query.filter_by(id=todo_id).first()
+    todo.complete = not todo.complete
+    db.session.commit()
+    return flask.redirect(flask.url_for("index"))
+
+@app.route('/delete/<int:todo_id>')
+def delete(todo_id):
+    # delete state of item 
+    todo = Todo.query.filter_by(id=todo_id).first()
+    db.session.delete(todo) 
+    db.session.commit()
+    return flask.redirect(flask.url_for("index"))
+
 if __name__=="__main__":
     db.create_all()
     # add something to data base
