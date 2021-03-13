@@ -18,9 +18,18 @@ class Todo(db.Model):
 def index():
     # show todos
     todo_list = Todo.query.all() # returns list with all db
-    print(todo_list)
     # more info on the second parameter, jinja template engine
     return flask.render_template('base.html', todo_list=todo_list)
+
+@app.route('/add', methods=["POST"])
+def add():
+    # add new item
+    title = flask.request.form.get("title") # get title from form
+    new_todo = Todo(title=title, complete=False)
+    # this is how you add something to de db
+    db.session.add(new_todo)
+    db.session.commit()
+    return flask.redirect(flask.url_for("index"))
 
 if __name__=="__main__":
     db.create_all()
