@@ -1,10 +1,10 @@
 todo list in flask
 ==================
 
-Super simple web app.
+Super simple web app, with no front-end.
 
 The purpose of the project is to learn flask's basics, how
-does sqlachemy works and implement a login capability.
+does sqlachemy works.
 
 how can I run it?
 =================
